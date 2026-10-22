@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../src/sensorVelocitat.php";
+
 use PHPUnit\Framework\TestCase;
 
 final class sensorVelocitatTest extends TestCase
@@ -21,10 +22,9 @@ final class sensorVelocitatTest extends TestCase
         $velocitat3 = new sensorVelocitat(60);
         $resultat = $velocitat3->clasificarVelocitat();
         $this->assertSame("Velocitat adequada", $resultat);
-
     }
 
-    public function testExcesLleu (): void
+    public function testExcesLleu(): void
     {
         $velocitat4 = new sensorVelocitat(61);
         $resultat = $velocitat4->clasificarVelocitat();
@@ -33,7 +33,6 @@ final class sensorVelocitatTest extends TestCase
         $velocitat5 = new sensorVelocitat(80);
         $resultat = $velocitat5->clasificarVelocitat();
         $this->assertSame("Excés lleu", $resultat);
-
     }
 
     public function testExcesModerat(): void
@@ -49,12 +48,8 @@ final class sensorVelocitatTest extends TestCase
 
     public function testExcesGreu(): void
     {
-         $velocitat8 = new sensorVelocitat(101);
+        $velocitat8 = new sensorVelocitat(101);
         $resultat = $velocitat8->clasificarVelocitat();
         $this->assertSame("Excés greu", $resultat);
     }
-
-
 }
-
-
