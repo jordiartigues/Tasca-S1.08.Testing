@@ -4,7 +4,8 @@
     },
     "autoload": {
         "classmap": [
-            "Nivel I/src/"
+            "Nivel I/exercici1/src/",
+            "Nivel I/exercici2/src/"
         ]
     }
 }
