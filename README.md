@@ -39,7 +39,7 @@ Això instal·la PHPUnit i les dependències necessàries.
 Per executar les proves automatitzades, utilitzar:
 
 ```bash
-.\vendor\bin\phpunit "Nivel I/tests/numberCheckerTest.php"
+.\vendor\bin\phpunit "Nivel I/exercici1/tests/numberCheckerTest.php"
 ```
 
 ## Proves realitzades
