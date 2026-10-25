@@ -6,39 +6,87 @@ use PHPUnit\Framework\TestCase;
 
 final class NumberCheckerTest extends TestCase
 {
-    public function testIsEven(): void
+    public function testIsEvenReturnsTrueForPositiveEvenNumber(): void
     {
-        $number1 = new NumberChecker(4);
-        $this->assertTrue($number1->isEven());
+        $number = new NumberChecker(4);
 
-        $number2 = new NumberChecker(3);
-        $this->assertFalse($number2->isEven());
-
-        $number3 = new NumberChecker(-2);
-        $this->assertTrue($number3->isEven());
-
-        $number4 = new NumberChecker(-3);
-        $this->assertFalse($number4->isEven());
-
-        $number5 = new NumberChecker(0);
-        $this->assertTrue($number5->isEven());
+        $this->assertTrue($number->isEven());
     }
 
-    public function testIsPositive(): void
+    public function testIsEvenReturnsFalseForPositiveOddNumber(): void
     {
-        $number1 = new NumberChecker(4);
-        $this->assertTrue($number1->isPositive());
+        $number = new NumberChecker(3);
 
-        $number2 = new NumberChecker(3);
-        $this->assertTrue($number2->isPositive());
+        $this->assertFalse($number->isEven());
+    }
 
-        $number3 = new NumberChecker(-2);
-        $this->assertFalse($number3->isPositive());
+    public function testIsEvenReturnsTrueForNegativeEvenNumber(): void
+    {
+        $number = new NumberChecker(-2);
 
-        $number4 = new NumberChecker(-3);
-        $this->assertFalse($number4->isPositive());
+        $this->assertTrue($number->isEven());
+    }
 
-        $number5 = new NumberChecker(0);
-        $this->assertFalse($number5->isPositive());
+    public function testIsEvenReturnsFalseForNegativeOddNumber(): void
+    {
+        $number = new NumberChecker(-3);
+
+        $this->assertFalse($number->isEven());
+    }
+
+    public function testIsEvenReturnsTrueForZero(): void
+    {
+        $number = new NumberChecker(0);
+
+        $this->assertTrue($number->isEven());
+    }
+
+    public function testIsPositiveReturnsTrueForPositiveNumber(): void
+    {
+        $number = new NumberChecker(4);
+
+        $this->assertTrue($number->isPositive());
+    }
+
+    public function testIsPositiveReturnsFalseForNegativeNumber(): void
+    {
+        $number = new NumberChecker(-2);
+
+        $this->assertFalse($number->isPositive());
+    }
+
+    public function testIsPositiveReturnsFalseForZero(): void
+    {
+        $number = new NumberChecker(0);
+
+        $this->assertFalse($number->isPositive());
+    }
+
+    public function testIsEvenReturnsFalseForPHPIntMax(): void
+    {
+        $number = new NumberChecker(PHP_INT_MAX);
+
+        $this->assertFalse($number->isEven());
+    }
+
+    public function testIsEvenReturnsTrueForPHPIntMin(): void
+    {
+        $number = new NumberChecker(PHP_INT_MIN);
+
+        $this->assertTrue($number->isEven());
+    }
+
+    public function testIsPositiveReturnsTrueForPHPIntMax(): void
+    {
+        $number = new NumberChecker(PHP_INT_MAX);
+
+        $this->assertTrue($number->isPositive());
+    }
+
+    public function testIsPositiveReturnsFalseForPHPIntMin(): void
+    {
+        $number = new NumberChecker(PHP_INT_MIN);
+
+        $this->assertFalse($number->isPositive());
     }
 }

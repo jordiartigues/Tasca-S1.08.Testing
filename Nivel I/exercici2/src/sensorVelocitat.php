@@ -1,6 +1,6 @@
 <?php
 
-class sensorVelocitat
+class SensorVelocitat
 {
     private int $velocitat;
 
@@ -9,7 +9,7 @@ class sensorVelocitat
         $this->velocitat = $velocitat;
     }
 
-    public function clasificarVelocitat(): string
+    public function classificarVelocitat(): string
     {
         if ($this->velocitat < 30) {
             return "Molt lent";
